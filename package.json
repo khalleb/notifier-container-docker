@@ -3,17 +3,26 @@
   "version": "1.0.0",
   "description": "notifier status docker telegram",
   "main": "index.js",
-  "author": "khallebw@gmail.com",
+  "repository": "https://github.com/khalleb/notifier-container-docker",
+  "author": "khalleb <khallebw@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts | pino-pretty -c"
+  },
   "dependencies": {
     "dockerode": "^3.2.1",
     "dotenv": "^8.2.0",
     "reflect-metadata": "^0.1.13",
+    "stream-json": "^1.7.1",
     "telegraf": "^4.3.0",
     "tsyringe": "^4.5.0"
   },
   "devDependencies": {
     "@types/dockerode": "^3.2.3",
+    "@types/stream-json": "^1.5.1",
+    "pino-pretty": "^4.7.1",
+    "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^4.2.3"
   }
 }
