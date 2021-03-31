@@ -1,9 +1,11 @@
 import { Telegram as Telegraf } from 'telegraf';
-import ISendMessageProvier from "../models/ISendMessageProvider";
+
+import ISendMessageProvier from '../models/ISendMessageProvider';
 
 
 class TelegramProvider implements ISendMessageProvier {
-  private client: Telegraf;
+  private client : Telegraf;
+
   constructor() {
     this.client = new Telegraf(process.env.TELEGRAM_BOT_TOKEN as string);
   }

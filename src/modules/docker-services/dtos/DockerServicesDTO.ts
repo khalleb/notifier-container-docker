@@ -1,6 +1,6 @@
 export interface IEventType {
-  Type: string,
-  Action: 'connect' | 'stop' | 'create' | 'mount' | 'start' | 'kill' | 'die' | 'disconnect' | 'unmount' | 'destroy',
+  Type: string;
+  Action: 'connect' | 'stop' | 'create' | 'mount' | 'start' | 'kill' | 'die' | 'disconnect' | 'unmount' | 'destroy';
   Actor: {
     ID: string,
     Attributes: {
@@ -12,11 +12,11 @@ export interface IEventType {
       signal: string,
       driver: string,
     },
-  },
-  from: string,
-  id: string,
-  scope: string,
-  status: string,
-  time: string,
-  timeNano: string,
+  };
+  from: string;
+  id: string;
+  scope: string;
+  status: string;
+  time: string;
+  timeNano: string;
 }

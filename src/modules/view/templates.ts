@@ -1,11 +1,12 @@
-import { DockerVersion, ContainerInfo } from "dockerode";
-import { format } from "date-fns";
-import { IEventType } from "@modules/docker-services/dtos/DockerServicesDTO";
+import { format } from 'date-fns';
+import { DockerVersion, ContainerInfo } from 'dockerode';
+
+import { IEventType } from '@modules/docker-services/dtos/DockerServicesDTO';
 
 export function viewInit(dv: DockerVersion): string {
   const body = `
   <b> *** MONITORING STARTED *** </b>
-  Date: <b>${format(new Date, 'yyyy-MM-dd')}</b>
+  Date: <b>${format(new Date(), 'yyyy-MM-dd')}</b>
   System: <b>Os: ${dv?.Os} - Arch: ${dv?.Arch}</b>
   Version: <b>${dv?.Version}</b>`;
   return body;
@@ -16,15 +17,13 @@ export function viewListContainers(containers: ContainerInfo[]): string {
     return 'WITHOUT ACTIVE CONTAINERS';
   }
   const body = `
-    ${containers.length > 1
-      ? '<b> -- CONTAINERS -- </b>'
-      : '<b> -- CONTAINER -- </b>'
-    }
-    ${containers.map(e => (`
-      Name: <b>${e?.Names[0].replace('/', '')}</b> 
-      Id: <b>${e?.Id.substring(0, 12)}</b>`
-    ))}
-  `
+    ${containers.length > 1 ? '<b> -- CONTAINERS -- </b>' : '<b> -- CONTAINER -- </b>'}
+    ${containers.map(
+      e => `
+      Name: <b>${e?.Names[0].replace('/', '')}</b>
+      Id: <b>${e?.Id.substring(0, 12)}</b>`,
+    )}
+  `;
   return body;
 }
 
@@ -35,15 +34,16 @@ export function viewStatusContainer(data: IEventType): string {
          <b>CREATE</b> container <b>${data?.Actor?.Attributes?.name}</b>
          Image: <b>${data?.Actor?.Attributes?.image}</b>
          Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
-      `
-    } else if (data.Action === 'start') {
+      `;
+    }
+    if (data.Action === 'start') {
       return `
         <b>STARTED</b> container <b>${data?.Actor?.Attributes?.name}</b>
   Image: <b>${data?.Actor?.Attributes?.image}</b>
   Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
-        `
+        `;
     }
-    else if (data.Action === 'stop') {
+    if (data.Action === 'stop') {
       return `
         <b>STOPPED</b> container <b>${data?.Actor?.Attributes?.name}</b>
   Image: <b>${data?.Actor?.Attributes?.image}</b>
@@ -51,7 +51,7 @@ export function viewStatusContainer(data: IEventType): string {
   Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
         `;
     }
-    else if (data.Action === 'destroy') {
+    if (data.Action === 'destroy') {
       return `
         <b>DESTROY</b> container <b>${data?.Actor?.Attributes?.name}</b>
   Image: <b>${data?.Actor?.Attributes?.image}</b>
@@ -61,4 +61,3 @@ export function viewStatusContainer(data: IEventType): string {
   }
   return '';
 }
-

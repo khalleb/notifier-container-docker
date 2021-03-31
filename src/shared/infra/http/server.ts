@@ -1,9 +1,12 @@
 import 'reflect-metadata';
 import 'dotenv/config';
 import { container } from 'tsyringe';
-import DockerServices from '@modules/docker-services/services/DockerServices';
-import '@shared/container';
 
+import DockerServices from '@modules/docker-services/services/DockerServices';
+
+import '@shared/container';
+import '@config/config';
+import Logger from '@shared/errors/Logger';
 
 async function main() {
   const dockerServices = container.resolve(DockerServices);
@@ -11,4 +14,4 @@ async function main() {
   await dockerServices.sendEventStream();
 }
 
-main();
+main().catch(error => Logger.error(error));
