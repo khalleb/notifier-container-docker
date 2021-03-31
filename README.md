@@ -20,9 +20,9 @@
 
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requisito">Requisito</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-configuração">Configuração</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-uso">Uso</a> &#xa0; &#xa0; | &#xa0;
+  <a href="#gear-requisito">Requisito</a> &#xa0; | &#xa0;
+  <a href="#hammer_and_wrench-configuração">Configuração</a> &#xa0; | &#xa0;
+  <a href="#rocket-uso">Uso</a> &#xa0; &#xa0; | &#xa0;
   <a href="#framed_picture-imagens">Imagens</a> &#xa0; &#xa0;
 </p>
 
