@@ -1,29 +1,20 @@
 <h1 align="center">
-
-<img src="https://raw.githubusercontent.com/khalleb/ignews/main/public/images/avatar.svg" alt="rocketshoes" width="100px"/>
-
+  # Notifier Container Docker
 </h1>
 
 <p align="center">
-  IGNEWS - Portal de notícias 📰🚀
   <br>
-  <br>
-
-  <img alt="Language count" src="https://img.shields.io/github/repo-size/khalleb/ignews"/>
-
-  <a href="https://rocketseat.com.br">
-    <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%237519C1">
-  </a>
+  <img alt="Language count" src="https://img.shields.io/github/repo-size/khalleb/notifier-container-docker"/>
 
   <a href="https://www.linkedin.com/in/khalleb/">
     <img alt="Made by Khalleb" src="https://img.shields.io/badge/made%20by-khalleb-%237519C1">
   </a>
 
   <a href="https://github.com/khalleb/ignews/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/khalleb/ignews">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/khalleb/ignnotifier-container-dockerews">
   </a>
 
-  <img alt="License" src="https://img.shields.io/github/license/khalleb/ignews">
+  <img alt="License" src="https://img.shields.io/github/license/khalleb/notifier-container-docker">
 </p>
 
 ---
