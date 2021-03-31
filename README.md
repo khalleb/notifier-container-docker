@@ -20,7 +20,7 @@
 
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requerimentos">Pré-requisito</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requisito">Requisito</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-começando">Começando</a> &#xa0; &#xa0; | &#xa0;
   <a href="#framed_picture-imagens">Imagens</a> &#xa0; &#xa0;
 </p>
@@ -29,9 +29,9 @@
 
 ## :dart: Sobre ##
 O projeto tem como intuito obter os status de containers do docker e notificar através do telegram.
-## :white_check_mark: Pré-requisito ##
+## :white_check_mark: Requisito ##
 
-- [Node](https://nodejs.org/en/) (>= 12.0)
+- [Node](https://nodejs.org/en/) >= 12.0
 - [Yarn](https://yarnpkg.com/lang/en/)
 
 ## :checkered_flag: Começando ##
