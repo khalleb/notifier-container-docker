@@ -21,6 +21,7 @@
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requisito">Requisito</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-configuração">Configuração</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-começando">Começando</a> &#xa0; &#xa0; | &#xa0;
   <a href="#framed_picture-imagens">Imagens</a> &#xa0; &#xa0;
 </p>
@@ -34,6 +35,15 @@ O projeto tem como intuito obter os status de containers do docker e notificar a
 - [Node](https://nodejs.org/en/) >= 12.0
 - [Yarn](https://yarnpkg.com/lang/en/)
 
+
+## :checkered_flag: Configuração ##
+```env
+  DRIVER_MESSAGE=telegram
+
+  # TELEGRAM
+  TELEGRAM_BOT_TOKEN=
+  TELEGRAM_CHAT_ID=
+```
 ## :checkered_flag: Começando ##
 
 ```bash
