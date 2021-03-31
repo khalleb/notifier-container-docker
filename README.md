@@ -1,5 +1,5 @@
 <h1 align="center">
-  # Notifier Container Docker
+  🚀 Notifier Container Docker
 </h1>
 
 <p align="center">
@@ -11,18 +11,16 @@
   </a>
 
   <a href="https://github.com/khalleb/ignews/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/khalleb/ignnotifier-container-dockerews">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/khalleb/notifier-container-docker">
   </a>
 
   <img alt="License" src="https://img.shields.io/github/license/khalleb/notifier-container-docker">
 </p>
 
----
 
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
-  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requerimentos">Requerimentos</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requerimentos">Pré-requisito</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-começando">Começando</a> &#xa0; &#xa0; | &#xa0;
   <a href="#framed_picture-imagens">Imagens</a> &#xa0; &#xa0;
 </p>
@@ -30,18 +28,7 @@
 <br>
 
 ## :dart: Sobre ##
-
-O projeto ig.news é um blog onde os usuários podem ter acesso ao conteúdo de cada postagem de acordo com o status de sua assinatura.<br>
-O blog possui um sistema de compra integrado com o STRIPE, e após o usuário realizar o pagamento, sua inscrição estará ativa e pronta para visualizar o conteúdo completo
-de todo o blog. Caso o usuário não deseje optar pela assinatura, ele terá acesso limitado ao conteúdo das postagens. E todos os dados necessários para se fazer verificações
-de assinaturas ou dados dos usuários, estão salvos no banco de dados FaunaDB.
-<br>
-<br>
-Essa é uma aplicação Serverless, ou seja, todo o processo que dependeria de um backend foi integrado dentro do front e seguindo o padrão da JAMStack.
-<br>
-As postagens são feitas pelo painel do Prismic CMS e integradas diretamente pelo front.
-
-
+O projeto tem como intuito obter os status de containers do docker e notificar através do telegram.
 ## :rocket: Tecnologias ##
 
 As seguintes tecnologias foram utilizadas no projeto:
@@ -51,9 +38,9 @@ As seguintes tecnologias foram utilizadas no projeto:
 - [Stripe](https://stripe.com/)
 - [FaunaDB](https://fauna.com/)
 
-## :white_check_mark: Requerimentos ##
+## :white_check_mark: Pré-requisito ##
 
-- [Node](https://nodejs.org/en/)
+- [Node](https://nodejs.org/en/) (>= 12.0)
 - [Yarn](https://yarnpkg.com/lang/en/)
 
 ## :checkered_flag: Começando ##
