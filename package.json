@@ -10,10 +10,10 @@
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts | pino-pretty -c"
   },
   "dependencies": {
+    "date-fns": "^2.19.0",
     "dockerode": "^3.2.1",
     "dotenv": "^8.2.0",
     "reflect-metadata": "^0.1.13",
-    "stream-json": "^1.7.1",
     "telegraf": "^4.3.0",
     "tsyringe": "^4.5.0"
   },

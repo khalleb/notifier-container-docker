@@ -1,23 +1,64 @@
-module.exports.container_start = (e: any) =>
-  `Started container <b>${e.Actor.Attributes.name}</b>
-Image: <b>${e.Actor.Attributes.image}</b>
-Container ID: <b>${e.Actor.ID}</b>`;
+import { DockerVersion, ContainerInfo } from "dockerode";
+import { format } from "date-fns";
+import { IEventType } from "@modules/docker-services/dtos/DockerServicesDTO";
 
-module.exports.container_kill = (e: any) =>
-  `Stopped container <b>${e.Actor.Attributes.name}</b>
-Image: <b>${e.Actor.Attributes.image}</b>
-Exit Code: <b>${e.Actor.Attributes.exitCode}</b>
-Container ID: <b>${e.Actor.ID}</b>`;
+export function viewInit(dv: DockerVersion): string {
+  const body = `
+  <b> *** MONITORING STARTED *** </b>
+  Date: <b>${format(new Date, 'yyyy-MM-dd')}</b>
+  System: <b>Os: ${dv?.Os} - Arch: ${dv?.Arch}</b>
+  Version: <b>${dv?.Version}</b>`;
+  return body;
+}
 
-module.exports.container_die = module.exports.container_kill;
+export function viewListContainers(containers: ContainerInfo[]): string {
+  if (!containers || containers.length === 0) {
+    return 'WITHOUT ACTIVE CONTAINERS';
+  }
+  const body = `
+    ${containers.length > 1
+      ? '<b> -- CONTAINERS -- </b>'
+      : '<b> -- CONTAINER -- </b>'
+    }
+    ${containers.map(e => (`
+      Name: <b>${e?.Names[0].replace('/', '')}</b> 
+      Id: <b>${e?.Id.substring(0, 12)}</b>`
+    ))}
+  `
+  return body;
+}
 
-module.exports.container_destroy = (e: any) =>
-  `Destroyed container <b>${e.Actor.Attributes.name}</b>
-Image: <b>${e.Actor.Attributes.image}</b>
-Container ID: <b>${e.Actor.ID}</b>`;
+export function viewStatusContainer(data: IEventType): string {
+  if (data?.Action) {
+    if (data.Action === 'create' && data?.Actor?.Attributes?.name) {
+      return `
+         <b>CREATE</b> container <b>${data?.Actor?.Attributes?.name}</b>
+         Image: <b>${data?.Actor?.Attributes?.image}</b>
+         Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
+      `
+    } else if (data.Action === 'start') {
+      return `
+        <b>STARTED</b> container <b>${data?.Actor?.Attributes?.name}</b>
+  Image: <b>${data?.Actor?.Attributes?.image}</b>
+  Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
+        `
+    }
+    else if (data.Action === 'stop') {
+      return `
+        <b>STOPPED</b> container <b>${data?.Actor?.Attributes?.name}</b>
+  Image: <b>${data?.Actor?.Attributes?.image}</b>
+  Exit Code: <b>${data?.Actor?.Attributes?.exitCode}</b>
+  Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
+        `;
+    }
+    else if (data.Action === 'destroy') {
+      return `
+        <b>DESTROY</b> container <b>${data?.Actor?.Attributes?.name}</b>
+  Image: <b>${data?.Actor?.Attributes?.image}</b>
+  Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
+        `;
+    }
+  }
+  return '';
+}
 
-module.exports.network_create = (e: any) =>
-  `Created network \`${e.Actor.Attributes.name}\``;
-
-module.exports.network_destroy = (e: any) =>
-  `Destroyed network \`${e.Actor.Attributes.name}\``;

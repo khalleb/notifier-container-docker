@@ -7,7 +7,7 @@ import '@shared/container';
 
 async function main() {
   const dockerServices = container.resolve(DockerServices);
-  await dockerServices.sendVersion();
+  await dockerServices.initialData();
   await dockerServices.sendEventStream();
 }
 
