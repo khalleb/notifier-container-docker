@@ -29,15 +29,6 @@
 
 ## :dart: Sobre ##
 O projeto tem como intuito obter os status de containers do docker e notificar através do telegram.
-## :rocket: Tecnologias ##
-
-As seguintes tecnologias foram utilizadas no projeto:
-
-- [Next.js](https://nextjs.org/)
-- [Prismic CMS](https://prismic.io/)
-- [Stripe](https://stripe.com/)
-- [FaunaDB](https://fauna.com/)
-
 ## :white_check_mark: Pré-requisito ##
 
 - [Node](https://nodejs.org/en/) (>= 12.0)
