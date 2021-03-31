@@ -69,8 +69,8 @@ $ yarn start
 ## :framed_picture: Imagens ##
 
 <h1 align="center">
-    <img alt = "Web app" src = "./.github/image-01.jpeg"/>
-    <img alt = "Web app" src = "./.github/image-02.jpeg"/>
+    <img alt = "Web app" src = "./.github/images/image-01.jpeg"/>
+    <img alt = "Web app" src = "./.github/images/image-02.jpeg"/>
 </h1>
 
 
