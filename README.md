@@ -1,5 +1,5 @@
 <h1 align="center">
-  🚀 Notifier Container Docker
+   Notifier Container Docker
 </h1>
 
 <p align="center">
@@ -22,7 +22,7 @@
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requisito">Requisito</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-configuração">Configuração</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-começando">Começando</a> &#xa0; &#xa0; | &#xa0;
+  <a href="#checkered_flag-uso">Uso</a> &#xa0; &#xa0; | &#xa0;
   <a href="#framed_picture-imagens">Imagens</a> &#xa0; &#xa0;
 </p>
 
@@ -30,14 +30,14 @@
 
 ## :dart: Sobre ##
 O projeto tem como intuito obter os status de containers do docker e notificar através do telegram.
-## :white_check_mark: Requisito ##
+## :gear: Requisito ##
 
 - [Node](https://nodejs.org/en/) >= 12.0
 - [Yarn](https://yarnpkg.com/lang/en/)
 
 
-## :checkered_flag: Configuração .env
-Crie o arquivo '.env' e informe:
+## :hammer_and_wrench: Configuração
+Crie o arquivo [.env](https://github.com/khalleb/notifier-container-docker/blob/main/.env.example) e informe:
 * `token`: Token de autorização do Telegram.
 * `to`:  Identificador único para o chat.
 ```env
@@ -46,23 +46,25 @@ Crie o arquivo '.env' e informe:
   TELEGRAM_BOT_TOKEN=
   TELEGRAM_CHAT_ID=
 ```
-[Telegram Bot API](https://core.telegram.org/bots/api)
-## :checkered_flag: Começando ##
+Como gerar token: [Telegram Bot API](https://core.telegram.org/bots/api)
+
+## :rocket: Uso ##
 
 ```bash
 # Clone this project
-$ git clone https://github.com/khalleb/ignews
+$ git clone https://github.com/khalleb/notifier-container-docker.git
 
 # Access
-$ cd ignews
+$ cd notifier-container-docker
 
 # Install dependencies
 $ yarn install
 
-# Run the project
-$ yarn dev
+# Build project
+$ yarn build
 
-# The server will initialize in the <http://localhost:3000>
+# Run the project
+$ yarn start
 ```
 ## :framed_picture: Imagens ##
 
