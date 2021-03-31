@@ -36,7 +36,10 @@ O projeto tem como intuito obter os status de containers do docker e notificar a
 - [Yarn](https://yarnpkg.com/lang/en/)
 
 
-## :checkered_flag: Configuração ##
+## :checkered_flag: Configuração .env##
+Crie o arquivo '.env' e informe:
+* `token`: Token de autorização do Telegram.
+* `to`:  Identificador único para o chat.
 ```env
   DRIVER_MESSAGE=telegram
 
