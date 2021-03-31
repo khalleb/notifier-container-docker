@@ -68,10 +68,10 @@ $ yarn start
 ```
 ## :framed_picture: Imagens ##
 
-<h1 align="center">
-    <img alt = "Web app" src = "./.github/images/image-01.jpeg"/>
-    <img alt = "Web app" src = "./.github/images/image-02.jpeg"/>
-</h1>
+<div align="center">
+    <img alt = "Image telegram one" src = "./.github/images/image-01.jpeg" max-width = "300px"/>
+    <img alt = "Image telegram two" src = "./.github/images/image-02.jpeg" max-width = "300px"/>
+</div>
 
 
 
