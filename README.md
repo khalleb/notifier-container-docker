@@ -29,24 +29,34 @@
 <br>
 
 ## :dart: Sobre ##
-O projeto tem como intuito obter os status de containers do docker e notificar através do telegram.
+O projeto tem como intuito obter os status de containers do docker e notificar através do TELEGRAM.
 ## :gear: Requisito ##
 
-- [Node](https://nodejs.org/en/) >= 12.0
-- [Yarn](https://yarnpkg.com/lang/en/)
+- [Node](https://nodejs.org/en/) >= v12.20.1
+- [Yarn](https://yarnpkg.com/lang/en/) >= v1.22.5
 
 
 ## :hammer_and_wrench: Configuração
 Crie o arquivo [.env](https://github.com/khalleb/notifier-container-docker/blob/main/.env.example) e informe:
 * `token`: Token de autorização do Telegram.
 * `to`:  Identificador único para o chat.
+Como gerar token: [Telegram Bot API](https://core.telegram.org/bots/api)
 ```env
   DRIVER_MESSAGE=telegram
 
   TELEGRAM_BOT_TOKEN=
   TELEGRAM_CHAT_ID=
+
+  CONTAINER_FILTER=
 ```
-Como gerar token: [Telegram Bot API](https://core.telegram.org/bots/api)
+Filtro para ignorar containers
+```env
+  CONTAINER_FILTER=!redis,!postgres
+```
+Filtro para containers
+```env
+  CONTAINER_FILTER=postgres,redis
+```
 
 ## :rocket: Uso ##
 
