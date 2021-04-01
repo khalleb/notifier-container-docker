@@ -14,7 +14,7 @@ export function viewInit(dv: DockerVersion): string {
 
 export function viewListContainers(containers: ContainerInfo[]): string {
   if (!containers || containers.length === 0) {
-    return 'WITHOUT ACTIVE CONTAINERS';
+    return '<b>WITHOUT ACTIVE CONTAINERS</b>';
   }
   const body = `
     ${containers.length > 1 ? '<b> -- CONTAINERS -- </b>' : '<b> -- CONTAINER -- </b>'}

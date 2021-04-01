@@ -12,6 +12,8 @@ const envVarsSchema = Joi.object()
 
     TELEGRAM_BOT_TOKEN: Joi.string().required(),
     TELEGRAM_CHAT_ID: Joi.string().required(),
+
+    CONTAINER_FILTER: Joi.string().allow(''),
   })
   .unknown();
 
