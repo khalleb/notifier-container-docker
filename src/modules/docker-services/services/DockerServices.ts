@@ -1,11 +1,7 @@
 import Dockerode, { DockerVersion } from 'dockerode';
 import { injectable, inject } from 'tsyringe';
 
-import {
-  viewListContainers,
-  viewInit,
-  viewStatusContainer,
-} from '@modules/view/templates';
+import { viewListContainers, viewInit, viewStatusContainer } from '@modules/view/templates';
 
 import ISendMessageProvider from '@shared/container/providers/SendMessage/models/ISendMessageProvider';
 import Logger from '@shared/errors/Logger';
@@ -16,7 +12,7 @@ import { IEventType } from '../dtos/DockerServicesDTO';
 class DockerServices {
   constructor(
     @inject('MessageProvider')
-    private sendMessageProvider: ISendMessageProvider
+    private sendMessageProvider: ISendMessageProvider,
   ) {}
 
   public async initialData() {

@@ -2,16 +2,16 @@ export interface IEventType {
   Type: string;
   Action: 'connect' | 'stop' | 'create' | 'mount' | 'start' | 'kill' | 'die' | 'disconnect' | 'unmount' | 'destroy';
   Actor: {
-    ID: string,
+    ID: string;
     Attributes: {
-      container: string,
-      name: string,
-      type: string,
-      image: string,
-      exitCode: string,
-      signal: string,
-      driver: string,
-    },
+      container: string;
+      name: string;
+      type: string;
+      image: string;
+      exitCode: string;
+      signal: string;
+      driver: string;
+    };
   };
   from: string;
   id: string;
