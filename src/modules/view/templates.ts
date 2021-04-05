@@ -17,11 +17,11 @@ export function viewListContainers(containers: ContainerInfo[]): string {
     return '<b>WITHOUT ACTIVE CONTAINERS</b>';
   }
   const body = `
-    ${containers.length > 1 ? '<b> -- CONTAINERS -- </b>' : '<b> -- CONTAINER -- </b>'}
+    ${containers.length > 1 ? '<b> --- CONTAINERS --- </b>' : '<b> --- CONTAINER --- </b>'}
     ${containers.map(
       e => `
       Name: <b>${e?.Names[0].replace('/', '')}</b>
-      Id: <b>${e?.Id.substring(0, 12)}</b>`,
+      Id: <b>${e?.Id.substring(0, 12)}</b>\n`,
     )}
   `;
   return body;
@@ -47,7 +47,6 @@ export function viewStatusContainer(data: IEventType): string {
       return `
         <b>STOPPED</b> container <b>${data?.Actor?.Attributes?.name}</b>
   Image: <b>${data?.Actor?.Attributes?.image}</b>
-  Exit Code: <b>${data?.Actor?.Attributes?.exitCode}</b>
   Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
         `;
     }
