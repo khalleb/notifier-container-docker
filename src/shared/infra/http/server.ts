@@ -11,6 +11,7 @@ import Logger from '@shared/errors/Logger';
 async function main() {
   const dockerServices = container.resolve(DockerServices);
   await dockerServices.initialData();
+
   await dockerServices.sendEventStream();
 }
 
