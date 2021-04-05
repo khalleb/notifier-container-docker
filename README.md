@@ -22,8 +22,9 @@
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
   <a href="#gear-requisito">Requisito</a> &#xa0; | &#xa0;
   <a href="#hammer_and_wrench-configuração">Configuração</a> &#xa0; | &#xa0;
-  <a href="#rocket-uso">Uso</a> &#xa0; &#xa0; | &#xa0;
-  <a href="#framed_picture-imagens">Imagens</a> &#xa0; &#xa0;
+  <a href="#rocket-uso">Uso</a> &#xa0; | &#xa0;
+  <a href="#framed_picture-imagens">Imagens</a> &#xa0; | &#xa0;
+  <a href="#anchor-build">Build</a> &#xa0; &#xa0;
 </p>
 
 <br>
@@ -75,6 +76,17 @@ $ yarn build
 
 # Run the project
 $ yarn start
+```
+
+## :anchor: Build
+ **Opcional**
+Dando permissão ao arquivo
+```bash
+chmod +x build.sh
+```
+Execultando
+```bash
+/.build.sh
 ```
 ## :framed_picture: Imagens ##
 
