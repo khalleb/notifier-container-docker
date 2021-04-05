@@ -18,11 +18,13 @@ export function viewListContainers(containers: ContainerInfo[]): string {
   }
   const body = `
     ${containers.length > 1 ? '<b> --- CONTAINERS --- </b>' : '<b> --- CONTAINER --- </b>'}
-    ${containers.map(
-      e => `
+    ${containers
+      .map(
+        e => `
       Name: <b>${e?.Names[0].replace('/', '')}</b>
       Id: <b>${e?.Id.substring(0, 12)}</b>\n`,
-    )}
+      )
+      .join('')}
   `;
   return body;
 }
