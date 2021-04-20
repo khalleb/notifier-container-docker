@@ -5,8 +5,8 @@ import { viewListContainers, viewInit, viewStatusContainer } from '@modules/view
 
 import DockerProvider from '@shared/container/providers/Docker/implementations/DockerProvider';
 import IDockerProvider from '@shared/container/providers/Docker/models/IDockerProvider';
+import ILoggerProvider from '@shared/container/providers/LoggerProvider/models/ILoggerProvider';
 import ISendMessageProvider from '@shared/container/providers/SendMessage/models/ISendMessageProvider';
-import Logger from '@shared/errors/Logger';
 
 import { IEventType } from '../dtos/DockerServicesDTO';
 
@@ -18,6 +18,9 @@ class DockerServices {
 
     @inject('MessageProvider')
     private sendMessageProvider: ISendMessageProvider,
+
+    @inject('LoggerProvider')
+    private loggerProvider: ILoggerProvider,
   ) {}
 
   public async initialData() {
@@ -29,8 +32,8 @@ class DockerServices {
       message = `${message}
       ${messageContainers}`;
     }
-    Logger.info(message);
-    await this.sendMessageProvider.sendMessage(message);
+    this.loggerProvider.log('info', message);
+    // this.sendMessageProvider.sendMessage(message);
   }
 
   public async monitoredContainers() {
@@ -69,12 +72,13 @@ class DockerServices {
 
   public async sendEvent(event: IEventType) {
     if (event) {
+      this.loggerProvider.log('info', JSON.stringify(event));
       const checkContainer = this.checkContainerIsMonitored(event?.Actor?.Attributes?.name);
       if (checkContainer) {
         const message = viewStatusContainer(event);
         if (message) {
-          Logger.info(message);
-          await this.sendMessageProvider.sendMessage(message);
+          this.loggerProvider.log('info', message);
+          // await this.sendMessageProvider.sendMessage(message);
         }
       }
     }
@@ -96,8 +100,8 @@ class DockerServices {
   }
 
   public handleError(e: Error) {
-    Logger.error(e.message);
-    this.sendMessageProvider.sendMessage(e.message);
+    this.loggerProvider.log('error', e?.message);
+    this.sendMessageProvider.sendMessage(e?.message);
   }
 }
 

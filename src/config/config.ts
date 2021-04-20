@@ -14,6 +14,8 @@ const envVarsSchema = Joi.object()
     TELEGRAM_CHAT_ID: Joi.string().required(),
 
     CONTAINER_FILTER: Joi.string().allow(''),
+
+    LOG_PATH: Joi.string().allow(''),
   })
   .unknown();
 

@@ -6,5 +6,7 @@ declare namespace NodeJS {
     TELEGRAM_CHAT_ID?: string;
 
     CONTAINER_FILTER?: string;
+
+    LOG_PATH?: string;
   }
 }

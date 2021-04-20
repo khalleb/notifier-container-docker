@@ -49,6 +49,8 @@ Como gerar token: [Telegram Bot API](https://core.telegram.org/bots/api)
   TELEGRAM_CHAT_ID=
 
   CONTAINER_FILTER=
+
+  LOG_PATH=
 ```
 Filtro para ignorar containers
 ```env
