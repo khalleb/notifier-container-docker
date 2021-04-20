@@ -33,7 +33,7 @@ class DockerServices {
       ${messageContainers}`;
     }
     this.loggerProvider.log('info', message);
-    // this.sendMessageProvider.sendMessage(message);
+    this.sendMessageProvider.sendMessage(message);
   }
 
   public async monitoredContainers() {
@@ -78,7 +78,7 @@ class DockerServices {
         const message = viewStatusContainer(event);
         if (message) {
           this.loggerProvider.log('info', message);
-          // await this.sendMessageProvider.sendMessage(message);
+          await this.sendMessageProvider.sendMessage(message);
         }
       }
     }
