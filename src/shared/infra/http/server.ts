@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import 'dotenv/config';
 import { container } from 'tsyringe';
 
+import 'express-async-errors';
 import DockerServices from '@modules/docker-services/services/DockerServices';
 
 import '@shared/container';
