@@ -68,6 +68,7 @@
   },
   "lint-staged": {
     "*.ts": [
+      "./update-version.sh",
       "eslint --fix",
       "prettier --write"
     ]
