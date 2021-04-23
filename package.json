@@ -11,7 +11,7 @@
     "start": "node dist/shared/infra/http/server.js",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts | pino-pretty -c",
     "style": "eslint --fix . && npx prettier --write .",
-    "lint-staged": "eslint --fix . && npx prettier --write ."
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "celebrate": "^14.0.0",
