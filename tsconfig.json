@@ -19,8 +19,8 @@
     "resolveJsonModule": true,
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
-    "removeComments": true, /* Do not emit comments to output. */ /* Skip type checking of declaration files. */
-    "skipLibCheck": true,
+    "removeComments": true /* Do not emit comments to output. */ /* Skip type checking of declaration files. */,
+    "skipLibCheck": true
     // "lib": [],                             /* Specify library files to be included in the compilation. */
     // "checkJs": true,                       /* Report errors in .js files. */
     // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
@@ -67,7 +67,6 @@
     /* Experimental Options */
 
     /* Advanced Options */
-
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

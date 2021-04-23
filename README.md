@@ -17,7 +17,6 @@
   <img alt="License" src="https://img.shields.io/github/license/khalleb/notifier-container-docker">
 </p>
 
-
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
   <a href="#gear-requisito">Requisito</a> &#xa0; | &#xa0;
@@ -29,19 +28,23 @@
 
 <br>
 
-## :dart: Sobre ##
+## :dart: Sobre
+
 O projeto tem como intuito obter os status de containers do docker e notificar através do TELEGRAM.
-## :gear: Requisito ##
+
+## :gear: Requisito
 
 - [Node](https://nodejs.org/en/) >= v12.20.1
 - [Yarn](https://yarnpkg.com/lang/en/) >= v1.22.5
 
-
 ## :hammer_and_wrench: Configuração
+
 Crie o arquivo [.env](https://github.com/khalleb/notifier-container-docker/blob/main/.env.example) e informe:
-* `token`: Token de autorização do Telegram.
-* `to`:  Identificador único para o chat.
-Como gerar token: [Telegram Bot API](https://core.telegram.org/bots/api)
+
+- `token`: Token de autorização do Telegram.
+- `to`: Identificador único para o chat.
+  Como gerar token: [Telegram Bot API](https://core.telegram.org/bots/api)
+
 ```env
   DRIVER_MESSAGE=telegram
 
@@ -52,16 +55,20 @@ Como gerar token: [Telegram Bot API](https://core.telegram.org/bots/api)
 
   LOG_PATH=
 ```
+
 Filtro para ignorar containers
+
 ```env
   CONTAINER_FILTER=!redis,!postgres
 ```
+
 Filtro para containers
+
 ```env
   CONTAINER_FILTER=postgres,redis
 ```
 
-## :rocket: Uso ##
+## :rocket: Uso
 
 ```bash
 # Clone this project
@@ -81,21 +88,23 @@ $ yarn start
 ```
 
 ## :anchor: Build
- **Opcional**
+
+**Opcional**
 Dando permissão ao arquivo
+
 ```bash
 chmod +x build.sh
 ```
+
 Execultando
+
 ```bash
 /.build.sh
 ```
-## :framed_picture: Imagens ##
+
+## :framed_picture: Imagens
 
 <div>
     <img alt = "Image telegram one" src = "./.github/images/image-01.jpeg" width = "300px"/>
     <img alt = "Image telegram two" src = "./.github/images/image-02.jpeg" width = "300px"/>
 </div>
-
-
-
