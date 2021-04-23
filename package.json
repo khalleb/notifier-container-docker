@@ -10,8 +10,7 @@
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node dist/shared/infra/http/server.js",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts | pino-pretty -c",
-    "style": "eslint --fix . && npx prettier --write .",
-    "prepare": "husky install"
+    "style": "eslint --fix . && npx prettier --write ."
   },
   "dependencies": {
     "celebrate": "^14.0.0",
@@ -60,5 +59,11 @@
     "ts-node-dev": "^1.1.6",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.2.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
