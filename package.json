@@ -12,6 +12,11 @@
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts | pino-pretty -c",
     "style": "eslint --fix . && npx prettier --write ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'TESTESTES'"
+    }
+  },
   "dependencies": {
     "celebrate": "^14.0.0",
     "date-fns": "^2.19.0",
@@ -58,10 +63,5 @@
     "ts-node-dev": "^1.1.6",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.2.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo 'TESTESTES'"
-    }
   }
 }
