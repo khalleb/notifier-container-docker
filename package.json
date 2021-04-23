@@ -61,9 +61,14 @@
     "typescript": "^4.2.3"
   },
   "lint-staged": {
-    "*": [
+    "*.ts": [
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

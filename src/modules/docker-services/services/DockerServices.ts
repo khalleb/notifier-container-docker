@@ -38,6 +38,7 @@ class DockerServices {
 
   public async monitoredContainers() {
     const listContainers: ContainerInfo[] = await this.dockerProvider.getListContainers();
+
     const listFilterContainers = process?.env?.CONTAINER_FILTER as string | '';
     if (listContainers && listContainers.length > 0 && listFilterContainers) {
       const containers = listContainers.filter((e: ContainerInfo) =>
