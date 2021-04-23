@@ -13,11 +13,6 @@
     "style": "eslint --fix . && npx prettier --write .",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo 'TESTESTES'"
-    }
-  },
   "dependencies": {
     "celebrate": "^14.0.0",
     "date-fns": "^2.19.0",
