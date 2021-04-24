@@ -2,7 +2,7 @@ import { format as formatDate } from 'date-fns';
 import path from 'path';
 import { LoggerOptions, format, transports } from 'winston';
 
-import { version } from '../../package.json';
+import { getVersion } from '@shared/infra/utils/version';
 
 const { combine, timestamp, printf } = format;
 
@@ -22,7 +22,7 @@ export default {
       format: combine(
         timestamp(),
         printf(info => {
-          return `${info.timestamp} [${version}] [${info.level}] ${JSON.stringify(info.message)}`;
+          return `${info.timestamp} [${getVersion()}] [${info.level}] ${JSON.stringify(info.message)}`;
         }),
       ),
       transports: [

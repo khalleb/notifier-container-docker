@@ -7,6 +7,7 @@ import DockerProvider from '@shared/container/providers/Docker/implementations/D
 import IDockerProvider from '@shared/container/providers/Docker/models/IDockerProvider';
 import ILoggerProvider from '@shared/container/providers/LoggerProvider/models/ILoggerProvider';
 import ISendMessageProvider from '@shared/container/providers/SendMessage/models/ISendMessageProvider';
+import { getVersion } from '@shared/infra/utils/version';
 
 import { IEventType } from '../dtos/DockerServicesDTO';
 
@@ -32,8 +33,9 @@ class DockerServices {
       message = `${message}
       ${messageContainers}`;
     }
+    this.loggerProvider.log('info', `VERSION: ${getVersion()}`);
     this.loggerProvider.log('info', message);
-    this.sendMessageProvider.sendMessage(message);
+    // this.sendMessageProvider.sendMessage(message);
   }
 
   public async monitoredContainers() {

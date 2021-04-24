@@ -1,6 +1,6 @@
 {
   "name": "telegram-notifier-docker",
-  "version": "1.0.1.20210423",
+  "version": "1.0.2",
   "description": "notifier status docker telegram",
   "main": "index.js",
   "repository": "https://github.com/khalleb/notifier-container-docker",
@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "start": "node dist/shared/infra/http/server.js",
-    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts | pino-pretty -c",
-    "style": "eslint --fix . && npx prettier --write .",
+    "start": "NODE_ENV=production node dist/shared/infra/http/server.js",
+    "dev:server": "NODE_ENV=developer ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts | pino-pretty -c",
+    "style": "npx eslint --fix . && npx prettier --write .",
     "update-version": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/updateVersion.ts | pino-pretty -c"
   },
   "dependencies": {
@@ -53,7 +53,6 @@
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "husky": "^6.0.0",
-    "install": "^0.13.0",
     "lint-staged": "^10.5.4",
     "pino-pretty": "^4.7.1",
     "prettier": "^2.2.1",
