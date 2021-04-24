@@ -35,7 +35,7 @@ class DockerServices {
     }
     this.loggerProvider.log('info', `VERSION: ${getVersion()}`);
     this.loggerProvider.log('info', message);
-    // this.sendMessageProvider.sendMessage(message);
+    this.sendMessageProvider.sendMessage(message);
   }
 
   public async monitoredContainers() {
