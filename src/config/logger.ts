@@ -2,6 +2,8 @@ import { format as formatDate } from 'date-fns';
 import path from 'path';
 import { LoggerOptions, format, transports } from 'winston';
 
+import { version } from '../../package.json';
+
 const { combine, timestamp, printf } = format;
 
 interface ILoggerConfig {
@@ -20,7 +22,7 @@ export default {
       format: combine(
         timestamp(),
         printf(info => {
-          return `${info.timestamp} [${info.level}] : ${JSON.stringify(info.message)}`;
+          return `${info.timestamp} [${version}] [${info.level}] ${JSON.stringify(info.message)}`;
         }),
       ),
       transports: [
