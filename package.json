@@ -1,10 +1,11 @@
 {
   "name": "telegram-notifier-docker",
-  "version": "1.0.10.20210426",
+  "version": "1.0.11.20210426",
   "description": "notifier status docker telegram",
-  "main": "index.js",
-  "repository": "https://github.com/khalleb/notifier-container-docker",
-  "author": "khalleb <khallebw@gmail.com>",
+  "main": "src/shared/infra/http/server.ts",
+  "homepage": "https://github.com/khalleb/notifier-container-docker",
+  "url": "https://github.com/khalleb/notifier-container-docker/issues",
+  "author": "khalleb Ribeiro <khallebw@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
