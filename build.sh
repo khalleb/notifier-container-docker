@@ -12,7 +12,7 @@ fi
 
 echo "--------------------------------"
 echo "\e[33m REMOVING dist... \e[0m"
-rm -rf dist/
+find . -name 'dist' -maxdepth 1 -type d -exec rm -rf '{}' +
 echo "\e[32m dist REMOVED! \e[0m"
 
 echo "--------------------------------"
