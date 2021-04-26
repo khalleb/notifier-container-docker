@@ -17,9 +17,9 @@ export default async function updateVersion() {
 
   const spliteVersion = version.split('.');
 
-  let major = parseInt(spliteVersion[0], 8);
-  let minor = parseInt(spliteVersion[1], 8);
-  let patch = parseInt(spliteVersion[2], 8);
+  let major = Number(spliteVersion[0]);
+  let minor = Number(spliteVersion[1]);
+  let patch = Number(spliteVersion[2]);
 
   if (patch < 100) {
     patch += 1;
