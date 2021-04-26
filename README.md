@@ -22,8 +22,7 @@
   <a href="#gear-requisito">Requisito</a> &#xa0; | &#xa0;
   <a href="#hammer_and_wrench-configuração">Configuração</a> &#xa0; | &#xa0;
   <a href="#rocket-uso">Uso</a> &#xa0; | &#xa0;
-  <a href="#framed_picture-imagens">Imagens</a> &#xa0; | &#xa0;
-  <a href="#anchor-build">Build</a> &#xa0; &#xa0;
+  <a href="#framed_picture-imagens">Imagens</a> &#xa0;
 </p>
 
 <br>
@@ -36,6 +35,7 @@ O projeto tem como intuito obter os status de containers do docker e notificar a
 
 - [Node](https://nodejs.org/en/) >= v12.20.1
 - [Yarn](https://yarnpkg.com/lang/en/) >= v1.22.5
+- [Jq](https://stedolan.github.io/jq/)
 
 ## :hammer_and_wrench: Configuração
 
@@ -77,29 +77,14 @@ $ git clone https://github.com/khalleb/notifier-container-docker.git
 # Access
 $ cd notifier-container-docker
 
-# Install dependencies
-$ yarn install
+# Permissão ao arquivo
+chmod +x build.sh
 
 # Build project
-$ yarn build
+$ ./build.sh
 
 # Run the project
 $ yarn start
-```
-
-## :anchor: Build
-
-**Opcional**
-Dando permissão ao arquivo
-
-```bash
-chmod +x build.sh
-```
-
-Execultando
-
-```bash
-/.build.sh
 ```
 
 ## :framed_picture: Imagens
