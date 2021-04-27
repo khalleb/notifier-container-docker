@@ -39,8 +39,6 @@ DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 jq -n --arg version $VERSION --arg dateValue $DATE '{"version" : $version , "created_at" : $dateValue}' > dist/version.json
 
 if type "pm2" > /dev/null; then
-  echo "--------------------------------"
-
   echo "\e[33m RESTARTING SERVER... \e[0m"
   pm2 restart notifier-container-docker
   echo "\e[32m SERVER RESTARTED! \e[0m"

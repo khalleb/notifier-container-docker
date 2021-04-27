@@ -1,6 +1,6 @@
 {
   "name": "telegram-notifier-docker",
-  "version": "1.0.13.20210427",
+  "version": "1.0.14.20210427",
   "description": "notifier status docker telegram",
   "main": "src/shared/infra/http/server.ts",
   "homepage": "https://github.com/khalleb/notifier-container-docker",
