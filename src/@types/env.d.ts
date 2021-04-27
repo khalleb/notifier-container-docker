@@ -8,5 +8,7 @@ declare namespace NodeJS {
     CONTAINER_FILTER?: string;
 
     LOG_PATH?: string;
+
+    IDENTIFIED?: string;
   }
 }

@@ -3,12 +3,16 @@ import { DockerVersion, ContainerInfo } from 'dockerode';
 
 import { IEventType } from '@modules/docker-services/dtos/DockerServicesDTO';
 
+import { getVersion } from '@shared/infra/utils/version';
+
 export function viewInit(dv: DockerVersion): string {
   const body = `
   <b> *** MONITORING STARTED *** </b>
-  Date: <b>${format(new Date(), 'yyyy-MM-dd')}</b>
+  <b> **** ${
+    process?.env?.IDENTIFIED ? process.env.IDENTIFIED.toUpperCase() : format(new Date(), 'yyyy-MM-dd')
+  } **** </b>
   System: <b>Os: ${dv?.Os} - Arch: ${dv?.Arch}</b>
-  Version: <b>${dv?.Version}</b>`;
+  Version: <b>${getVersion()}</b>`;
   return body;
 }
 
@@ -29,35 +33,53 @@ export function viewListContainers(containers: ContainerInfo[]): string {
   return body;
 }
 
+function templateStatusContainer(
+  status: string,
+  containerName: string,
+  imageName: string,
+  coitainerId: string,
+): string {
+  return `
+  <b>${process?.env?.IDENTIFIED ? process.env.IDENTIFIED.toUpperCase() : '    --------- *** ---------'}</b>
+  <b>${status}</b> container <b>${containerName}</b>
+  Image: <b>${imageName}</b>
+  Container ID: <b>${coitainerId?.substring(0, 12)}</b>
+`;
+}
+
 export function viewStatusContainer(data: IEventType): string {
   if (data?.Action) {
     if (data.Action === 'create' && data?.Actor?.Attributes?.name) {
-      return `
-         <b>CREATE</b> container <b>${data?.Actor?.Attributes?.name}</b>
-         Image: <b>${data?.Actor?.Attributes?.image}</b>
-         Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
-      `;
+      return templateStatusContainer(
+        'CREATE',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
     }
     if (data.Action === 'start') {
-      return `
-        <b>STARTED</b> container <b>${data?.Actor?.Attributes?.name}</b>
-  Image: <b>${data?.Actor?.Attributes?.image}</b>
-  Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
-        `;
+      return templateStatusContainer(
+        'STARTED',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
     }
     if (data.Action === 'stop') {
-      return `
-        <b>STOPPED</b> container <b>${data?.Actor?.Attributes?.name}</b>
-  Image: <b>${data?.Actor?.Attributes?.image}</b>
-  Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
-        `;
+      return templateStatusContainer(
+        'STOPPED',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
     }
     if (data.Action === 'destroy') {
-      return `
-        <b>DESTROY</b> container <b>${data?.Actor?.Attributes?.name}</b>
-  Image: <b>${data?.Actor?.Attributes?.image}</b>
-  Container ID: <b>${data?.Actor?.ID.substring(0, 12)}</b>
-        `;
+      return templateStatusContainer(
+        'DESTROY',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
     }
   }
   return '';

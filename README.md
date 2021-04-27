@@ -54,6 +54,8 @@ Crie o arquivo [.env](https://github.com/khalleb/notifier-container-docker/blob/
   CONTAINER_FILTER=
 
   LOG_PATH=
+
+  IDENTIFIED=
 ```
 
 Filtro para ignorar containers

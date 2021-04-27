@@ -16,6 +16,8 @@ const envVarsSchema = Joi.object()
     CONTAINER_FILTER: Joi.string().allow(''),
 
     LOG_PATH: Joi.string().allow(''),
+
+    IDENTIFIED: Joi.string().allow(''),
   })
   .unknown();
 
