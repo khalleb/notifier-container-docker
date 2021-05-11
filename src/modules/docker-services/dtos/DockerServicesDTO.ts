@@ -1,6 +1,19 @@
+type TypeActionContainer =
+  | 'connect'
+  | 'stop'
+  | 'create'
+  | 'mount'
+  | 'start'
+  | 'kill'
+  | 'die'
+  | 'disconnect'
+  | 'unmount'
+  | 'destroy'
+  | 'attach'
+  | 'tag';
 export interface IEventType {
   Type: string;
-  Action: 'connect' | 'stop' | 'create' | 'mount' | 'start' | 'kill' | 'die' | 'disconnect' | 'unmount' | 'destroy';
+  Action: TypeActionContainer;
   Actor: {
     ID: string;
     Attributes: {

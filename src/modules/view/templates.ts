@@ -81,6 +81,70 @@ export function viewStatusContainer(data: IEventType): string {
         data?.Actor?.ID,
       );
     }
+    if (data.Action === 'disconnect') {
+      return templateStatusContainer(
+        'DISCONNECT',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
+    if (data.Action === 'kill') {
+      return templateStatusContainer(
+        'KILL',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
+    if (data.Action === 'die') {
+      return templateStatusContainer(
+        'DIE',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
+    if (data.Action === 'attach') {
+      return templateStatusContainer(
+        'ATTACH',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
+    if (data.Action === 'tag') {
+      return templateStatusContainer(
+        'TAG',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
+    if (data.Action === 'unmount') {
+      return templateStatusContainer(
+        'UNMOUNT',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
+    if (data.Action === 'mount') {
+      return templateStatusContainer(
+        'MOUNT',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
+    if (data.Action === 'connect') {
+      return templateStatusContainer(
+        'CONNECT',
+        data?.Actor?.Attributes?.name,
+        data?.Actor?.Attributes?.image,
+        data?.Actor?.ID,
+      );
+    }
   }
   return '';
 }
